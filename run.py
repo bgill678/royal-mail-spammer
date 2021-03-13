@@ -3,8 +3,9 @@ import random
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
-from config import monthArray
-from config import countyArray
+from config.arrays import monthArray
+from config.arrays import countyArray
+from config.card import cardArray
 
 #Chrome driver
 driver = webdriver.Chrome()
@@ -67,9 +68,9 @@ sortCodeBox = driver.find_element_by_id("sort")
 
 #Fill in text boxes - Card details
 cardHolderBox.send_keys("John Doe") # RANDOMISE
-cardNumberBox.send_keys("5532 6656 9966 6406") # RANDOMISE
+cardNumberBox.send_keys("{}".format(random.choice(cardArray))) # Randomised from CVV array located in config\cvv.py
 expiryDateBox.send_keys("0525") # RANDOMISE
-cvvBox.send_keys("123") # RANDOMISE
+cvvBox.send_keys("565") # RANDOMISE
 accountNumberBox.send_keys("225568") # RANDOMISE
 sortCodeBox.send_keys("532515") # RANDOMISE
 
