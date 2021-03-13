@@ -59,4 +59,15 @@ submitButton.click()
 
 #Step 4 - Second verification form
 cardHolderBox = driver.find_element_by_id("ccname")
-cardNumberBox = driver.find_element_by_id("")
+cardNumberBox = driver.find_element_by_id("ccnum")
+expiryDateBox = driver.find_element_by_id("expiry")
+cvvBox = driver.find_element_by_id("cvv")
+accountNumberBox = driver.find_element_by_id("acct")
+sortCodeBox = driver.find_element_by_id("sort")
+
+cardHolderBox.send_keys("John Doe") # RANDOMISE
+cardNumberBox.send_keys("5532 6656 9966 6406") # RANDOMISE
+expiryDateBox.send_keys("05/2025") # RANDOMISE
+cvvBox.send_keys("123") # RANDOMISE
+accountNumberBox.send_keys("225568") # RANDOMISE
+sortCodeBox.send_keys("53-25-15") # RANDOMISE
