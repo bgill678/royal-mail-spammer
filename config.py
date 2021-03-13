@@ -1,0 +1,2 @@
+monthArray = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+countyArray = ['Bedfordshire', 'Berkshire', 'Gloucestershire', 'Greater London', 'Essex', 'Greater Manchester', 'Staffordshire', 'August', 'Antrim']

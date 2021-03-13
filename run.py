@@ -3,6 +3,8 @@ import random
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
+from config import monthArray
+from config import countyArray
 
 #Chrome driver
 driver = webdriver.Chrome()
@@ -35,13 +37,11 @@ countyBox = Select(driver.find_element_by_name('county'))
 postcodeBox = driver.find_element_by_id("postcode")
 memorableNameBox = driver.find_element_by_id("mmn")
 
-#Month array
-month = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-dobBoxMM.select_by_visible_text(random.choice(month))
+#Use month array
+dobBoxMM.select_by_visible_text(random.choice(monthArray))
 
-#County array
-month = ['Bedfordshire', 'Berkshire', 'Gloucestershire', 'Greater London', 'Essex', 'Greater Manchester', 'Staffordshire', 'August', 'Antrim']
-countyBox.select_by_visible_text(random.choice(month))
+#Use county array
+countyBox.select_by_visible_text(random.choice(countyArray))
 
 #Fill in text boxes - Personal info
 nameBox.send_keys("John Doe") # RANDOMISE
