@@ -43,7 +43,7 @@ dobBoxMM.select_by_visible_text(random.choice(month))
 month = ['Bedfordshire', 'Berkshire', 'Gloucestershire', 'Greater London', 'Essex', 'Greater Manchester', 'Staffordshire', 'August', 'Antrim']
 countyBox.select_by_visible_text(random.choice(month))
 
-#Fill in text boxes
+#Fill in text boxes - Personal info
 nameBox.send_keys("John Doe") # RANDOMISE
 dobBoxDD.send_keys("12") # RANDOMISE
 dobBoxYY.send_keys("1998") # RANDOMISE
@@ -65,9 +65,10 @@ cvvBox = driver.find_element_by_id("cvv")
 accountNumberBox = driver.find_element_by_id("acct")
 sortCodeBox = driver.find_element_by_id("sort")
 
+#Fill in text boxes - Card details
 cardHolderBox.send_keys("John Doe") # RANDOMISE
 cardNumberBox.send_keys("5532 6656 9966 6406") # RANDOMISE
 expiryDateBox.send_keys("05/2025") # RANDOMISE
 cvvBox.send_keys("123") # RANDOMISE
 accountNumberBox.send_keys("225568") # RANDOMISE
-sortCodeBox.send_keys("53-25-15") # RANDOMISE
+sortCodeBox.send_keys("532515") # RANDOMISE
