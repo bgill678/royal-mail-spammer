@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import Select
 from config.arrays import monthArray
 from config.arrays import countyArray
 from config.card import cardArray
+from config.addresses import addressArray
 
 #Chrome driver
 driver = webdriver.Chrome()
@@ -48,7 +49,7 @@ countyBox.select_by_visible_text(random.choice(countyArray))
 nameBox.send_keys("John Doe") # RANDOMISE
 dobBoxDD.send_keys("12") # RANDOMISE
 dobBoxYY.send_keys("1998") # RANDOMISE
-addressBox.send_keys("12 john avenue, stephen row") # RANDOMISE
+addressBox.send_keys("{}".format(random.choice(addressArray))) # Randomised from Address array located in config\addresses.py
 cityBox.send_keys("London") # RANDOMISE
 postcodeBox.send_keys("NW12") # RANDOMISE
 memorableNameBox.send_keys("Johnathan") # RANDOMISE
