@@ -52,7 +52,7 @@ cityBox.send_keys("London") # RANDOMISE
 postcodeBox.send_keys("NW12") # RANDOMISE
 memorableNameBox.send_keys("Johnathan") # RANDOMISE
 
-#Submit button press
+#Submit button press - Personal info
 time.sleep(1)
 submitButton = driver.find_element_by_id("edit-submit")
 submitButton.click()
@@ -68,7 +68,12 @@ sortCodeBox = driver.find_element_by_id("sort")
 #Fill in text boxes - Card details
 cardHolderBox.send_keys("John Doe") # RANDOMISE
 cardNumberBox.send_keys("5532 6656 9966 6406") # RANDOMISE
-expiryDateBox.send_keys("05/2025") # RANDOMISE
+expiryDateBox.send_keys("0525") # RANDOMISE
 cvvBox.send_keys("123") # RANDOMISE
 accountNumberBox.send_keys("225568") # RANDOMISE
 sortCodeBox.send_keys("532515") # RANDOMISE
+
+#Submit button press - Card details
+time.sleep(1)
+submitButton = driver.find_element_by_id("edit-submit")
+submitButton.click()
