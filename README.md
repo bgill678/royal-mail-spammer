@@ -4,8 +4,6 @@ It is easy to establish that the forms do not have a check looking for active nu
 
 I am using the web driver selenium to automate the process.
 
-This spammer is UNDER DEVELOPMENT.
-
 This can be used for a variety of websites, or even used as a template for something bigger as a range of navigation options are available.
 
 This requires python3+
