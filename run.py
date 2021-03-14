@@ -7,6 +7,10 @@ from config.arrays import monthArray
 from config.arrays import countyArray
 from config.card import cardArray
 from config.addresses import addressArray
+from config.fullnames import fullNameArray
+from config.cities import citiesArray
+from config.postcodes import postalArray
+from config.names import nameArray
 
 #Chrome driver
 driver = webdriver.Chrome()
@@ -39,27 +43,33 @@ countyBox = Select(driver.find_element_by_name('county'))
 postcodeBox = driver.find_element_by_id("postcode")
 memorableNameBox = driver.find_element_by_id("mmn")
 
-#Use month array
-dobBoxMM.select_by_visible_text(random.choice(monthArray))
-
-#Use county array
-countyBox.select_by_visible_text(random.choice(countyArray))
-
 #Fill in text boxes - Personal info
-nameBox.send_keys("John Doe") # RANDOMISE
-dobBoxDD.send_keys("12") # RANDOMISE
-dobBoxYY.send_keys("1998") # RANDOMISE
+dobBoxMM.select_by_visible_text(random.choice(monthArray)) # Randomised from Month array located in config\arrays.py
+
+countyBox.select_by_visible_text(random.choice(countyArray)) # Randomised from County array located in config\arrays.py
+
+nameBox.send_keys("{}".format(random.choice(fullNameArray))) # Randomised from Name array located in config\fullnames.py
+
+dayRand = random.randint(1, 30)
+dobBoxDD.send_keys("{}".format(dayRand)) 
+
+yearRand = random.randint(1958, 2002)
+dobBoxYY.send_keys("{}".format(yearRand))
+
 addressBox.send_keys("{}".format(random.choice(addressArray))) # Randomised from Address array located in config\addresses.py
-cityBox.send_keys("London") # RANDOMISE
-postcodeBox.send_keys("NW12") # RANDOMISE
-memorableNameBox.send_keys("Johnathan") # RANDOMISE
+
+cityBox.send_keys("{}".format(random.choice(citiesArray))) # Randomised from Cities array located in config\cities.py
+
+postcodeBox.send_keys("{}".format(random.choice(postalArray))) # Randomised from Postal array located in config\postcodes.py
+
+memorableNameBox.send_keys("{}".format(random.choice(nameArray))) # Randomised from Names array located in config\names.py
 
 #Submit button press - Personal info
 time.sleep(1)
 submitButton = driver.find_element_by_id("edit-submit")
 submitButton.click()
 
-#Step 4 - Second verification form
+#Step 3 - Second verification form
 cardHolderBox = driver.find_element_by_id("ccname")
 cardNumberBox = driver.find_element_by_id("ccnum")
 expiryDateBox = driver.find_element_by_id("expiry")
@@ -68,14 +78,24 @@ accountNumberBox = driver.find_element_by_id("acct")
 sortCodeBox = driver.find_element_by_id("sort")
 
 #Fill in text boxes - Card details
-cardHolderBox.send_keys("John Doe") # RANDOMISE
+cardHolderBox.send_keys("{}".format(random.choice(fullNameArray))) # Randomised from Name array located in config\fullnames.py
 cardNumberBox.send_keys("{}".format(random.choice(cardArray))) # Randomised from CVV array located in config\cvv.py
-expiryDateBox.send_keys("0525") # RANDOMISE
-cvvBox.send_keys("565") # RANDOMISE
-accountNumberBox.send_keys("225568") # RANDOMISE
-sortCodeBox.send_keys("532515") # RANDOMISE
 
-#Submit button press - Card details
+expiryRand1 = random.randint(0o1, 31)
+expiryRand2 = random.randint(22, 25)
+expiryRand = expiryRand1 + expiryRand2
+expiryDateBox.send_keys("{}".format(expiryRand)) 
+
+cvvRand = random.randint(0o01, 999)
+cvvBox.send_keys("{}".format(cvvRand)) 
+
+accountNumberRand = random.randint(0o1212123, 31510604)
+accountNumberBox.send_keys("{}".format(accountNumberRand)) 
+
+sortCodeRand = random.randint(112312, 887766)
+sortCodeBox.send_keys("{}".format(sortCodeRand)) 
+
+#Step 4 - Submit button press - THE END
 time.sleep(1)
 submitButton = driver.find_element_by_id("edit-submit")
 submitButton.click()
