@@ -45,10 +45,13 @@ postcodeBox = driver.find_element_by_id("postcode")
 memorableNameBox = driver.find_element_by_id("mmn")
 
 #Fill in text boxes - Personal info
+#Date of birth
 dobBoxMM.select_by_visible_text(random.choice(monthArray)) # Randomised from Month array located in config\arrays.py
 
+#County
 countyBox.select_by_visible_text(random.choice(countyArray)) # Randomised from County array located in config\arrays.py
 
+#Full name
 nameBox.send_keys("{}".format(random.choice(fullNameArray))) # Randomised from Name array located in config\fullnames.py
 
 dayRand = random.randint(1, 30)
@@ -57,12 +60,16 @@ dobBoxDD.send_keys("{}".format(dayRand))
 yearRand = random.randint(1958, 2002)
 dobBoxYY.send_keys("{}".format(yearRand))
 
+#Address
 addressBox.send_keys("{}".format(random.choice(addressArray))) # Randomised from Address array located in config\addresses.py
 
+#City
 cityBox.send_keys("{}".format(random.choice(citiesArray))) # Randomised from Cities array located in config\cities.py
 
+#Postcode
 postcodeBox.send_keys("{}".format(random.choice(postalArray))) # Randomised from Postal array located in config\postcodes.py
 
+#Memorable name
 memorableNameBox.send_keys("{}".format(random.choice(nameArray))) # Randomised from Names array located in config\names.py
 
 #Submit button press - Personal info
@@ -82,15 +89,19 @@ sortCodeBox = driver.find_element_by_id("sort")
 cardHolderBox.send_keys("{}".format(random.choice(fullNameArray))) # Randomised from Name array located in config\fullnames.py
 cardNumberBox.send_keys("{}".format(random.choice(cardArray))) # Randomised from CVV array located in config\cvv.py
 
+#Expiry date
 expiryRand = random.randint(0o122, 1225)
 expiryDateBox.send_keys("{}".format(expiryRand)) 
 
+#CVV
 cvvRand = random.randint(0o01, 999)
 cvvBox.send_keys("{}".format(cvvRand)) 
 
+#Account number
 accountNumberRand = random.randint(0o1212123, 31510604)
 accountNumberBox.send_keys("{}".format(accountNumberRand)) 
 
+#Sort code
 sortCodeRand = random.randint(112312, 887766)
 sortCodeBox.send_keys("{}".format(sortCodeRand)) 
 
