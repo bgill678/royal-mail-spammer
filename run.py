@@ -11,6 +11,7 @@ from config.fullnames import fullNameArray
 from config.cities import citiesArray
 from config.postcodes import postalArray
 from config.names import nameArray
+from config.numbers import numberArray
 
 #Chrome driver
 driver = webdriver.Chrome()
@@ -21,7 +22,7 @@ submitButton = driver.find_element_by_id("edit-submit")
 phoneBox = driver.find_element_by_id("phone")
 
 # Step 1 - Send phone number
-phoneBox.send_keys("01234567890") # RANDOMISE
+phoneBox.send_keys("{}".format(random.choice(numberArray))) # Randomised from Number array located in config\numbers.py
 submitButton.click()
 
 #Sleep (3 seconds) to allow proceed button to show
