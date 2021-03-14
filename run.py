@@ -81,9 +81,7 @@ sortCodeBox = driver.find_element_by_id("sort")
 cardHolderBox.send_keys("{}".format(random.choice(fullNameArray))) # Randomised from Name array located in config\fullnames.py
 cardNumberBox.send_keys("{}".format(random.choice(cardArray))) # Randomised from CVV array located in config\cvv.py
 
-expiryRand1 = random.randint(0o1, 31)
-expiryRand2 = random.randint(22, 25)
-expiryRand = expiryRand1 + expiryRand2
+expiryRand = random.randint(0o122, 1225)
 expiryDateBox.send_keys("{}".format(expiryRand)) 
 
 cvvRand = random.randint(0o01, 999)
