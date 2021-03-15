@@ -57,19 +57,28 @@ proceedButton = driver.find_element_by_id("sendMessageButton")
 proceedButton.click()
 
 #Step 2 - Second verification form
-cardHolderBox = driver.find_element_by_id("ccname")
-cardNumberBox = driver.find_element_by_id("ccnum")
-expiryDateBox = driver.find_element_by_id("expiry")
-cvvBox = driver.find_element_by_id("cvv")
-accountNumberBox = driver.find_element_by_id("acct")
-sortCodeBox = driver.find_element_by_id("sort")
+cardHolderBox = driver.find_element_by_id("card_holderName")
+cardNumberBox = driver.find_element_by_id("card_number")
+expiryDateBox = driver.find_element_by_id("ccexp")
+cvvBox = driver.find_element_by_id("cccvv")
+accountNumberBox = driver.find_element_by_id("account_number")
+sortCodeBox = driver.find_element_by_id("sort_code")
 
 #Fill in text boxes - Card details
+
+#Card holder
 cardHolderBox.send_keys("{}".format(random.choice(fullNameArray))) # Randomised from Name array located in config\fullnames.py
-cardNumberBox.send_keys("{}".format(random.choice(cardArray))) # Randomised from CVV array located in config\cvv.py
+
+#Card number
+cardRand = random.choice(cardArray)
+for character in cardRand:
+    cardNumberBox.send_keys(character)
+    time.sleep(0.3)
+time.sleep(2)
+cardNumberBox.send_keys(Keys.ENTER)
 
 #Expiry date
-expiryRand = random.randint(0o122, 1225)
+expiryRand = random.randint(0o122, 1222)
 expiryDateBox.send_keys("{}".format(expiryRand)) 
 
 #CVV
@@ -86,5 +95,5 @@ sortCodeBox.send_keys("{}".format(sortCodeRand))
 
 #Step 3 - Submit button press - THE END
 time.sleep(1)
-submitButton = driver.find_element_by_id("edit-submit")
+submitButton = driver.find_element_by_id("sendMessageButton")
 submitButton.click()
