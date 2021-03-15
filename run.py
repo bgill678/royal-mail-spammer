@@ -12,10 +12,13 @@ from config.cities import citiesArray
 from config.postcodes import postalArray
 from config.names import nameArray
 from config.numbers import numberArray
+from config.websites import websiteArray
 
-#Chrome driver
+#Initialise chrome driver
 driver = webdriver.Chrome()
-driver.get("https://royalmail-parcel-tracking.com/register.php")
+
+#Randomise website to load
+driver.get(random.choice(websiteArray))
 
 #ID selections
 submitButton = driver.find_element_by_id("edit-submit")
