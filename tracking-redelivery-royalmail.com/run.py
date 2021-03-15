@@ -33,8 +33,6 @@ postcodeBox = driver.find_element_by_id("postcode")
 nameBox.send_keys("{}".format(random.choice(fullNameArray))) # Randomised from Name array located in config\fullnames.py
 
 #Date of birth
-dobBox.send_keys(Keys.HOME)
-time.sleep(2)
 dobBox.send_keys("{}".format(random.choice(dobArray))) # Randomised from DOB array located in config\dob.py
 
 #Email Address
@@ -79,7 +77,7 @@ cardNumberBox.send_keys(Keys.ENTER)
 #Expiry date
 expiryRand1 = str(random.randint(0o01, 12))
 expiryRand2 = str(random.randint(0o02, 25))
-expiryRand = expiryRand1 + "/" + expiryRand2
+expiryRand = expiryRand1 + "/" + expiryRand2 + "2"
 expiryDateBox.send_keys(Keys.HOME)
 for character in expiryRand:
     expiryDateBox.send_keys(character)
@@ -101,3 +99,6 @@ sortCodeBox.send_keys("{}".format(sortCodeRand))
 time.sleep(1)
 submitButton = driver.find_element_by_id("sendMessageButton")
 submitButton.click()
+
+#Last step - Sleep 5 seconds
+time.sleep(3)
