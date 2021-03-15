@@ -14,7 +14,7 @@ from config.websites import websiteArray
 from config.emails import emailArray
 from config.dob import dobArray
 
-#Initialise chrome driver
+#Initialise opera driver
 driver = webdriver.Chrome()
 
 #Randomise website to load
@@ -65,7 +65,6 @@ accountNumberBox = driver.find_element_by_id("account_number")
 sortCodeBox = driver.find_element_by_id("sort_code")
 
 #Fill in text boxes - Card details
-
 #Card holder
 cardHolderBox.send_keys("{}".format(random.choice(fullNameArray))) # Randomised from Name array located in config\fullnames.py
 
@@ -78,18 +77,20 @@ time.sleep(2)
 cardNumberBox.send_keys(Keys.ENTER)
 
 #Expiry date
-expiryRand = random.randint(0o122, 1222)
+expiryRand1 = str(random.randint(0o01, 12))
+expiryRand2 = str(random.randint(0o02, 25))
+expiryRand = expiryRand1 + "/" + expiryRand2
+expiryDateBox.send_keys(Keys.HOME)
 for character in expiryRand:
     expiryDateBox.send_keys(character)
-    time.sleep(0.3)
-time.sleep(1)
+    time.sleep(1)
 
 #CVV
 cvvRand = random.randint(0o01, 999)
 cvvBox.send_keys("{}".format(cvvRand)) 
 
 #Account number
-accountNumberRand = random.randint(0o1212123, 31510604)
+accountNumberRand = random.randint(0o0212123, 31510604)
 accountNumberBox.send_keys("{}".format(accountNumberRand)) 
 
 #Sort code
