@@ -12,6 +12,7 @@ from config.names import nameArray
 from config.numbers import numberArray
 from config.websites import websiteArray
 from config.emails import emailArray
+from config.dob import dobArray
 
 #Initialise chrome driver
 driver = webdriver.Chrome()
@@ -32,10 +33,9 @@ postcodeBox = driver.find_element_by_id("postcode")
 nameBox.send_keys("{}".format(random.choice(fullNameArray))) # Randomised from Name array located in config\fullnames.py
 
 #Date of birth
-dobRand = random.randint(10256525, 21256325)
-dobBox.send_keys(Keys.END)
+dobBox.send_keys(Keys.HOME)
 time.sleep(2)
-dobBox.send_keys("{}".format(dobRand))
+dobBox.send_keys("{}".format(random.choice(dobArray))) # Randomised from DOB array located in config\dob.py
 
 #Email Address
 emailBox.send_keys("{}".format(random.choice(emailArray))) # Randomised from Emails array located in config\emails.py
