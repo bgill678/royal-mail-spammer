@@ -79,7 +79,10 @@ cardNumberBox.send_keys(Keys.ENTER)
 
 #Expiry date
 expiryRand = random.randint(0o122, 1222)
-expiryDateBox.send_keys("{}".format(expiryRand)) 
+for character in expiryRand:
+    expiryDateBox.send_keys(character)
+    time.sleep(0.3)
+time.sleep(1)
 
 #CVV
 cvvRand = random.randint(0o01, 999)
