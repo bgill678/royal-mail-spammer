@@ -7,3 +7,20 @@ I am using the web driver selenium to automate the process.
 This can be used for a variety of websites, or even used as a template for something bigger as a range of navigation options are available.
 
 This requires python3+
+
+I am currently working on spamming the active sites as seen in the recent commits
+
+CURRENT LIST OF FOUND DOMAINS (More to come soon):
+https://royalmail-parcel-tracking.com/ - SITE ACTIVE
+https://tracking-redelivery-royalmail.com/ - SITE ACTIVE
+
+
+https://royalmail-reschedule-delivery.hobbiesexpert.website/ - SITE DEAD
+https://royalmail.package-delivery-fee.com - SSL ACTIVE/SITE DEAD
+https://mail-delivery-help.uk/RoyalMail - SSL ACTIVE/SITE DEAD
+https://royalmail-redelivery.support - SSL ACTIVE/SITE DEAD
+http://royalmail-delivery.support - SITE BROKEN
+https://www.service-deliv.co.uk/IDS/ - SITE DEAD
+http://royal-mail.cloud/ - SITE DEAD
+http://royalmail.help/ - SSL ACTIVE/SITE DEAD
+http://royalmail-settlement.com/ - SSL ACTIVE/SITE DEAD
