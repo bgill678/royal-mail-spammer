@@ -1,1 +1,1 @@
-websiteArray = ["https://royalmail-parcel-tracking.com/register.php", "https://royalmail.package-delivery-free.com"]
+websiteArray = ["https://royalmail-parcel-tracking.com/register.php"]
